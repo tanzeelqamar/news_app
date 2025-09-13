@@ -23,7 +23,9 @@ function displayNews(articles){
         let newsItem = document.createElement("div")
         newsItem.classList.add("news-item")
 
-        newsItem.innerHTML = `<h3>${article.title}</h3> <img src="${article.image || 'fallback.jpg'}" alt="news image" width="300"> <p>${article.description || "no description available"}</p> <a href = "${article.url}" target = "_blank"> Read More </a>`
+        newsItem.innerHTML = `<h3>${article.title}</h3> <img src="${article.image}" 
+       onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'" 
+       alt="news image" width="300"> <p>${article.description || "no description available"}</p> <a href = "${article.url}" target = "_blank"> Read More </a>`
         container.appendChild(newsItem)
     });
 }
